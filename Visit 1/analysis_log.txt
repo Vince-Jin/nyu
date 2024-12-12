@@ -1,18 +1,10 @@
-Data path setted to: C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\data
-Output path setted to: C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output
+Data path setted to: G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\data
+Output path setted to: G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output
 table1 sub folder succesffully created.
 matrices sub folder succesffully created.
 figures sub folder succesffully created.
 sinfo sub folder succesffully created.
 Data loaded successfully.
-Please specify the censoring date for mortality status
-in the format of 'ddmmmyyyy', for example: 
-12/31/2011 -> 31dec2011
-Press enter to use 31 Dec 2011 . 
-Please specify the censoring date for esrd status
-in the format of 'ddmmmyyyy', for example: 
-12/31/2011 -> 31dec2011
-Press enter to use 31 Dec 2011 . 
 
        died |      Freq.     Percent        Cum.
 ------------+-----------------------------------
@@ -20,8 +12,6 @@ Press enter to use 31 Dec 2011 .
           1 |      1,150        0.66      100.00
 ------------+-----------------------------------
       Total |    173,929      100.00
-AAA
-BBB
 
        esrd |      Freq.     Percent        Cum.
 ------------+-----------------------------------
@@ -54,6 +44,7 @@ Creating interaction terms..................  WhiteX0age50 created
  OtherX1age50 created
 Done
 Centering systolic blood pressure.................. Done
+Creating p2014 groups............................. Done
 Data cleaning completed
 
 . 
@@ -61,14 +52,14 @@ end of do-file
 Detecting Variable Types
 Variable check cleared
 Detected binary variables: 
- gender diabete hypertension smoke relation
+ gender diabete hypertension smoke relation p2014
 Detected categorical variables: 
  race education
 Detected continuous variables: 
  don_age bmi don_bp_preop_syst egfr
 Variable check cleared
 Please indicate variables to modify, separated by space (e.g.: aaa bbb ccc)
-Press enter to skip modification . 
+Press enter to skip modification
 Generating Table1
 Table 1: Demographics
 N=116635
@@ -101,6 +92,8 @@ Highest Level of Education, n(%)
    AttendedCollege                                         16556(14.2) 
    CollegeGraduate                                         14794(12.7) 
    PostCollege                                             5980(5.1) 
+p2014, n(%)
+   0                                                       116635(100.0) 
 
 Missingness Information: 
 Gender                                                     0.00% missing
@@ -108,6 +101,7 @@ Diabetes History                                           0.00% missing
 Hypertension History                                       0.00% missing
 Smoking History                                            62.11% missing
 Donor Relationship                                         0.83% missing
+p2014                                                      0.00% missing
 Race/Ethnicity                                             0.10% missing
 Highest Level of Education                                 49.98% missing
 Calculated Donor Age in Years at Organ Recovery or Referral Date 0.01% missing
@@ -116,18 +110,18 @@ Preoperative Systolic                                      43.41% missing
 Estimated Glomerular Filtration Rate                       35.66% missing
 
 Table 1 saved as Table1 to the following directory:
-C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\table1
+G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\table1
 Detecting Variable Types
 Variable check cleared
 Detected binary variables: 
- gender diabete hypertension smoke relation
+ gender diabete hypertension smoke relation p2014
 Detected categorical variables: 
  race education
 Detected continuous variables: 
  don_age bmi don_bp_preop_syst egfr
 Variable check cleared
 Please indicate variables to modify, separated by space (e.g.: aaa bbb ccc)
-Press enter to skip modification . 
+Press enter to skip modification
 Generating Table1
 Table 1: Demographics
 N=23753
@@ -160,6 +154,8 @@ Highest Level of Education, n(%)
    AttendedCollege                                         3305(13.9) 
    CollegeGraduate                                         3603(15.2) 
    PostCollege                                             2089(8.8) 
+p2014, n(%)
+   0                                                       23753(100.0) 
 
 Missingness Information: 
 Gender                                                     0.00% missing
@@ -167,6 +163,7 @@ Diabetes History                                           0.00% missing
 Hypertension History                                       0.00% missing
 Smoking History                                            53.68% missing
 Donor Relationship                                         0.62% missing
+p2014                                                      0.00% missing
 Race/Ethnicity                                             0.09% missing
 Highest Level of Education                                 44.56% missing
 Calculated Donor Age in Years at Organ Recovery or Referral Date 0.03% missing
@@ -175,7 +172,7 @@ Preoperative Systolic                                      35.90% missing
 Estimated Glomerular Filtration Rate                       27.82% missing
 
 Table 1 saved as Table1_age50 to the following directory:
-C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\table1
+G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\table1
 
 Survival-time data settings
 
@@ -194,11 +191,12 @@ Observed time interval: (0, dfup]
                                                 At risk from t =         0
                                      Earliest observed entry t =         0
                                           Last observed exit t =  24.24914
-file C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_Mortality_Overall.png saved as PNG format
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\figures\KM_Mortality_Overall.png saved as PNG format
 
         Failure _d: died==1
   Analysis time _t: dfup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood = -783.64399
 Iteration 1:  Log likelihood = -764.35569
 Iteration 2:  Log likelihood = -763.97624
@@ -284,6 +282,8 @@ Non-First-Degree Relationship  |   .9439475   .2150054    -0.25   0.800     .604
                   <HighSchool  |   1.953232   .6369395     2.05   0.040     1.030816    3.701063
               AttendedCollege  |   1.363501   .4838509     0.87   0.382     .6801406    2.733457
                   PostCollege  |   1.127825   .5587563     0.24   0.808      .427103     2.97818
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
 file Sinfo_Mort_Overall.csv saved
 
@@ -304,11 +304,12 @@ Observed time interval: (0, efup]
                                                 At risk from t =         0
                                      Earliest observed entry t =         0
                                           Last observed exit t =  24.24914
-file C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_ESRD_Overall.png saved as PNG format
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\figures\KM_ESRD_Overall.png saved as PNG format
 
         Failure _d: esrd==1
   Analysis time _t: efup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood = -96.277809
 Iteration 1:  Log likelihood = -89.946944
 Iteration 2:  Log likelihood = -85.345081
@@ -344,6 +345,8 @@ Iteration 31: Log likelihood = -85.060835
 Iteration 32: Log likelihood = -85.060835
 Iteration 33: Log likelihood = -85.060835
 Iteration 34: Log likelihood = -85.060835
+Iteration 35: Log likelihood = -85.060835
+Iteration 36: Log likelihood = -85.060835
 Refining estimates:
 Iteration 0:  Log likelihood = -85.060835
 Iteration 1:  Log likelihood = -85.060835
@@ -368,7 +371,7 @@ Log likelihood = -85.060835                             Prob > chi2   = 0.0969
                          Male  |    .679487   .4763156    -0.55   0.581     .1719867    2.684525
                                |
                        diabete |
-                          Yes  |   1.10e-15   4.22e-07    -0.00   1.000            0           .
+                          Yes  |   1.48e-16   1.55e-07    -0.00   1.000            0           .
                                |
                   hypertension |
                           Yes  |   3.789457   4.173212     1.21   0.226     .4376985    32.80794
@@ -381,13 +384,15 @@ Non-First-Degree Relationship  |   .6774644   .4488978    -0.59   0.557     .184
                                |
                           race |
                         Black  |   3.360696   2.483908     1.64   0.101     .7894083    14.30727
-                     Hispanic  |   3.62e-16   1.99e-08    -0.00   1.000            0           .
-                        Other  |   3.91e-16   3.67e-08    -0.00   1.000            0           .
+                     Hispanic  |   4.90e-17   7.31e-09    -0.00   1.000            0           .
+                        Other  |   5.29e-17   1.35e-08    -0.00   1.000            0           .
                                |
                      education |
                   <HighSchool  |   .9902103   .8252277    -0.01   0.991     .1933516    5.071158
               AttendedCollege  |   1.468868    1.13229     0.50   0.618     .3242103    6.654858
-                  PostCollege  |   3.22e-16   1.61e-08    -0.00   1.000            0           .
+                  PostCollege  |   4.36e-17   5.94e-09    -0.00   1.000            0           .
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
 file Sinfo_ESRD_Overall.csv saved
 
@@ -408,11 +413,12 @@ Observed time interval: (0, dfup]
                                                 At risk from t =         0
                                      Earliest observed entry t =         0
                                           Last observed exit t =  24.23819
-file C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_Mortality_Age50.png saved as PNG format
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\figures\KM_Mortality_Age50.png saved as PNG format
 
         Failure _d: died==1
   Analysis time _t: dfup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood = -167.85802
 Iteration 1:  Log likelihood = -156.59969
 Iteration 2:  Log likelihood =   -155.406
@@ -451,23 +457,20 @@ Iteration 34: Log likelihood = -155.24498
 Iteration 35: Log likelihood = -155.24498
 Iteration 36: Log likelihood = -155.24498
 Iteration 37: Log likelihood = -155.24498
-Iteration 38: Log likelihood = -155.24498
-Iteration 39: Log likelihood = -155.24498
-Iteration 40: Log likelihood = -155.24498
-Iteration 41: Log likelihood = -155.24498
-Iteration 42: Log likelihood = -155.24498
-Iteration 43: Log likelihood = -155.24498
-Iteration 44: Log likelihood = -155.24498
 Refining estimates:
 Iteration 0:  Log likelihood = -155.24498
+Iteration 1:  Log likelihood = -155.24498
+Iteration 2:  Log likelihood = -155.24498
+Iteration 3:  Log likelihood = -155.24498
+Iteration 4:  Log likelihood = -155.24498
 
 Cox regression with no ties
 
 No. of subjects =       8,333                           Number of obs =  8,333
 No. of failures =          21
 Time at risk    = 25,117.7495
-                                                        LR chi2(13)   =  25.23
-Log likelihood = -155.24498                             Prob > chi2   = 0.0216
+                                                        LR chi2(14)   =  25.23
+Log likelihood = -155.24498                             Prob > chi2   = 0.0324
 
 ------------------------------------------------------------------------------------------------
                             _t | Haz. ratio   Std. err.      z    P>|z|     [95% conf. interval]
@@ -493,7 +496,7 @@ Log likelihood = -155.24498                             Prob > chi2   = 0.0216
 Non-First-Degree Relationship  |   .9917656   .4483313    -0.02   0.985      .408903    2.405458
                                |
                           race |
-                        Black  |   7.74e-20          .        .       .            .           .
+                        Black  |   1.55e-18   1.23e-09    -0.00   1.000            0           .
                      Hispanic  |   .8932929   .9362646    -0.11   0.914     .1145105    6.968549
                         Other  |   4.318248   3.317283     1.90   0.057     .9581064    19.46263
                                |
@@ -501,6 +504,8 @@ Non-First-Degree Relationship  |   .9917656   .4483313    -0.02   0.985      .40
                   <HighSchool  |   1.516995   .8402734     0.75   0.452     .5122687    4.492315
               AttendedCollege  |   .8125288   .5468259    -0.31   0.758     .2172633    3.038723
                   PostCollege  |   .7378214   .6213808    -0.36   0.718     .1416066    3.844315
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
 file Sinfo_Mort_Age50.csv saved
 
@@ -521,11 +526,12 @@ Observed time interval: (0, efup]
                                                 At risk from t =         0
                                      Earliest observed entry t =         0
                                           Last observed exit t =  24.23819
-file C:\OneDrive\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_ESRD_Age50.png saved as PNG format
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\nyu\Visit 1\output\figures\KM_ESRD_Age50.png saved as PNG format
 
         Failure _d: esrd==1
   Analysis time _t: efup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood =  -39.98516
 Iteration 1:  Log likelihood = -31.369638
 Iteration 2:  Log likelihood = -30.299875
@@ -613,6 +619,8 @@ Non-First-Degree Relationship  |   1.086932    1.03116     0.09   0.930     .169
                   <HighSchool  |    .872587   1.263062    -0.09   0.925     .0511331    14.89071
               AttendedCollege  |   3.351508   3.897288     1.04   0.298     .3431025    32.73834
                   PostCollege  |   1.38e-19          .        .       .            .           .
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
 file Sinfo_ESRD_Age50.csv saved
 
@@ -637,6 +645,7 @@ Observed time interval: (0, dfup]
         Failure _d: died==1
   Analysis time _t: dfup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood = -783.64399
 Iteration 1:  Log likelihood = -763.14024
 Iteration 2:  Log likelihood =  -761.5529
@@ -669,29 +678,18 @@ Iteration 28: Log likelihood = -761.32384
 Iteration 29: Log likelihood = -761.32384
 Iteration 30: Log likelihood = -761.32384
 Iteration 31: Log likelihood = -761.32384
-Iteration 32: Log likelihood = -761.32384
-Iteration 33: Log likelihood = -761.32384
-Iteration 34: Log likelihood = -761.32384
-Iteration 35: Log likelihood = -761.32384
-Iteration 36: Log likelihood = -761.32384
-Iteration 37: Log likelihood = -761.32384
-Iteration 38: Log likelihood = -761.32384
-Iteration 39: Log likelihood = -761.32384
-Iteration 40: Log likelihood = -761.32384
-Iteration 41: Log likelihood = -761.32384
-Iteration 42: Log likelihood = -761.32384
-Iteration 43: Log likelihood = -761.32384
-Iteration 44: Log likelihood = -761.32384
 Refining estimates:
 Iteration 0:  Log likelihood = -761.32384
+Iteration 1:  Log likelihood = -761.32384
+Iteration 2:  Log likelihood = -761.32384
 
 Cox regression with Breslow method for ties
 
 No. of subjects =      32,438                           Number of obs = 32,438
 No. of failures =          80
 Time at risk    = 103,506.594
-                                                        LR chi2(17)   =  44.64
-Log likelihood = -761.32384                             Prob > chi2   = 0.0003
+                                                        LR chi2(19)   =  44.64
+Log likelihood = -761.32384                             Prob > chi2   = 0.0008
 
 ------------------------------------------------------------------------------------------------
                             _t | Haz. ratio   Std. err.      z    P>|z|     [95% conf. interval]
@@ -705,7 +703,7 @@ Log likelihood = -761.32384                             Prob > chi2   = 0.0003
                         Other  |   .8097356   .5889706    -0.29   0.772      .194631    3.368795
                                |
                    age_50#race |
-                      1#Black  |   4.59e-20          .        .       .            .           .
+                      1#Black  |   2.75e-15   3.96e-08    -0.00   1.000            0           .
                    1#Hispanic  |   .6400358   .7035036    -0.41   0.685     .0742327    5.518402
                       1#Other  |   4.187429     4.3658     1.37   0.170     .5426097    32.31525
                                |
@@ -717,7 +715,7 @@ Log likelihood = -761.32384                             Prob > chi2   = 0.0003
                          Male  |   1.176399   .2700325     0.71   0.479     .7501848    1.844764
                                |
                        diabete |
-                          Yes  |   1.78e-18          .        .       .            .           .
+                          Yes  |   5.30e-15   3.51e-07    -0.00   1.000            0           .
                                |
                   hypertension |
                           Yes  |    .796989   .5799246    -0.31   0.755      .191461    3.317602
@@ -732,8 +730,9 @@ Non-First-Degree Relationship  |   .9511301   .2171549    -0.22   0.826      .60
                   <HighSchool  |   1.964973   .6404538     2.07   0.038     1.037337    3.722143
               AttendedCollege  |   1.366553   .4850438     0.88   0.379     .6815556    2.740007
                   PostCollege  |   1.144139   .5671935     0.27   0.786     .4330173    3.023096
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
-(file Sinfo_Mort_Interaction.csv not found)
 file Sinfo_Mort_Interaction.csv saved
 
 Survival-time data settings
@@ -757,6 +756,7 @@ Observed time interval: (0, efup]
         Failure _d: esrd==1
   Analysis time _t: efup/365.25
 
+note: 0.p2014 omitted because of collinearity.
 Iteration 0:  Log likelihood = -96.277809
 Iteration 1:  Log likelihood = -87.142236
 Iteration 2:  Log likelihood = -84.285473
@@ -797,22 +797,17 @@ Iteration 36: Log likelihood = -83.753366
 Iteration 37: Log likelihood = -83.753366
 Iteration 38: Log likelihood = -83.753366
 Iteration 39: Log likelihood = -83.753366
-Iteration 40: Log likelihood = -83.753366
-Iteration 41: Log likelihood = -83.753366
-Iteration 42: Log likelihood = -83.753366
-Iteration 43: Log likelihood = -83.753366
-Iteration 44: Log likelihood = -83.753366
-Iteration 45: Log likelihood = -83.753366
 Refining estimates:
 Iteration 0:  Log likelihood = -83.753366
+Iteration 1:  Log likelihood = -83.753366
 
 Cox regression with no ties
 
 No. of subjects =      32,437                           Number of obs = 32,437
 No. of failures =          10
 Time at risk    = 103,493.829
-                                                        LR chi2(13)   =  25.05
-Log likelihood = -83.753366                             Prob > chi2   = 0.0227
+                                                        LR chi2(18)   =  25.05
+Log likelihood = -83.753366                             Prob > chi2   = 0.1236
 
 ------------------------------------------------------------------------------------------------
                             _t | Haz. ratio   Std. err.      z    P>|z|     [95% conf. interval]
@@ -822,13 +817,13 @@ Log likelihood = -83.753366                             Prob > chi2   = 0.0227
                                |
                           race |
                         Black  |   3.220633   3.033148     1.24   0.214     .5085003    20.39817
-                     Hispanic  |   5.14e-20          .        .       .            .           .
-                        Other  |   4.53e-19          .        .       .            .           .
+                     Hispanic  |   7.62e-18   3.43e-09    -0.00   1.000            0           .
+                        Other  |   9.10e-18   7.07e-09    -0.00   1.000            0           .
                                |
                    age_50#race |
                       1#Black  |   1.236661    1.80018     0.15   0.884     .0713141      21.445
-                   1#Hispanic  |   .3310055          .        .       .            .           .
-                      1#Other  |   .3299247          .        .       .            .           .
+                   1#Hispanic  |   .3310055   4.14e+08    -0.00   1.000            0           .
+                      1#Other  |   .3299247   6.19e+08    -0.00   1.000            0           .
                                |
                   bmi_centered |   1.100237   .0497958     2.11   0.035     1.006842    1.202295
                   sbp_centered |   .9895127    .023812    -0.44   0.661     .9439255    1.037301
@@ -852,13 +847,13 @@ Non-First-Degree Relationship  |   .6744999   .4485724    -0.59   0.554     .183
                      education |
                   <HighSchool  |   .9657948   .8024374    -0.04   0.967     .1895214     4.92166
               AttendedCollege  |   1.446916   1.114811     0.48   0.632     .3196058     6.55046
-                  PostCollege  |   3.78e-20          .        .       .            .           .
+                  PostCollege  |   5.62e-18   2.15e-09    -0.00   1.000            0           .
+                               |
+                       0.p2014 |          1  (omitted)
 ------------------------------------------------------------------------------------------------
-(file Sinfo_ESRD_Interaction.csv not found)
 file Sinfo_ESRD_Interaction.csv saved
 
 . 
 end of do-file
 
-. 
 . exit, clear

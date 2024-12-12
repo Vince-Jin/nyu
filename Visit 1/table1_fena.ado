@@ -26,7 +26,8 @@ qui {
 				// double verify the variable types 
 				// ask for user input
 				noi di "Please indicate variables to modify, separated by space (e.g.: aaa bbb ccc)"
-				noi di "Press enter to skip modification", _request(var_change)
+				noi di "Press enter to skip modification"
+				// , _request(var_change)
 				if ("${var_change}" != "") {
 					local bstring : di "${bin}"
 					local castring : di "${cat}"
@@ -193,7 +194,8 @@ qui {
 				noi di in g "Variables below not found in current dataset: "
 				noi di "`missing'"
 				noi di "Please re-enter variable list for the program"
-				noi di "(Enter exit to terminate the program)", _request(terminator)
+				noi di "(Enter exit to terminate the program)"
+				// , _request(terminator)
 				
 				if (strupper("${terminator}") == "EXIT") {
 					exit

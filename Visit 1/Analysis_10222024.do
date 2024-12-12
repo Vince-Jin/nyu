@@ -17,6 +17,7 @@ qui {
         }
 
         // check if basic path information is up
+        global root : di "`c(pwd)'"
         if ("${root}" == "") {
             noi di "Please enter the root path folder for this analysis."
             noi di "Press enter to use the folder underwhich this do file is saved.", _request(root)
@@ -47,6 +48,7 @@ qui {
         log using "analysis_log.txt", text replace
 
         // check if the data path is up
+        global data : di "`c(pwd)'${slash}data"
         if ("${data}" == "") {
             noi di "Please enter the data path folder for this analysis."
             noi di "Press enter to use the data folder under root path.", _request(data)
@@ -151,11 +153,12 @@ qui {
 
     if 4 {
         // obtain mortality censoring date
+        /*
         noi di "Please specify the censoring date for mortality status"
         noi di "in the format of 'ddmmmyyyy', for example: "
         noi di "12/31/2011 -> 31dec2011"
         noi di "Press enter to use 31 Dec 2011", _request(mort_censor_date)
-
+        */
         if ("${mort_censor_date}" == "") {
             global mort_censor_date : di  `"d(31dec2011)"'
         }
@@ -164,10 +167,12 @@ qui {
         }
 
         // obtain esrd censoring date
+        /*
         noi di "Please specify the censoring date for esrd status"
         noi di "in the format of 'ddmmmyyyy', for example: "
         noi di "12/31/2011 -> 31dec2011"
         noi di "Press enter to use 31 Dec 2011", _request(esrd_censor_date)
+        */
 
         if ("${esrd_censor_date}" == "") {
             global esrd_censor_date : di  `"d(31dec2011)"'
@@ -185,11 +190,11 @@ qui {
         replace dfup = .5 if dfup == 0
         
         drop if !inrange(dfup,0,10000)
-		noi di "AAA"
+
         // conduct esrd follow up period
         gen esrd = !missing(pers_esrd_first_service_dt)
         replace esrd = 0 if pers_esrd_first_service_dt > ${esrd_censor_date} | pers_esrd_first_service_dt > pers_ssa_death
-		noi di "BBB"
+
         gen e_censor = min(pers_esrd_first_service_dt, pers_ssa_death, ${esrd_censor_date})
         noi tab esrd
         g efup = e_censor - don_recov_dt
