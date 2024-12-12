@@ -1,0 +1,446 @@
+Please enter the data path folder for this analysis.
+Press enter to use the data folder under root path. . 
+Data path setted to: G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\data
+Output path setted to: G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output
+table1 sub folder succesffully created.
+matrices sub folder succesffully created.
+figures sub folder succesffully created.
+sinfo sub folder succesffully created.
+Data loaded successfully.
+Please specify the censoring date for mortality status
+in the format of 'ddmmmyyyy', for example: 
+12/31/2011 -> 31dec2011
+Press enter to use 31 Dec 2011 . 
+Please specify the censoring date for esrd status
+in the format of 'ddmmmyyyy', for example: 
+12/31/2011 -> 31dec2011
+Press enter to use 31 Dec 2011 . 
+
+       died |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |    172,779       99.34       99.34
+          1 |      1,150        0.66      100.00
+------------+-----------------------------------
+      Total |    173,929      100.00
+AAA
+BBB
+
+       esrd |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |    116,339       99.73       99.73
+          1 |        314        0.27      100.00
+------------+-----------------------------------
+      Total |    116,653      100.00
+
+. // data cleaning
+. 
+. qui {
+Centering age.................. Done
+Establishing binary variable for age >= 50.................. Done
+Cleaning for gender.................. Done
+Cleaning for race.................. Done
+Cleaning for education.................. Done
+Cleaning for donor relationship.................. Done
+Cleaning for diabetes history.................. Done
+Cleaning for hypertension history.................. Done
+Cleaning for smoking history.................. Done
+Cleaning for BMI.................. Done
+Cleaning for eGFR.................. Done
+Creating interaction terms..................  WhiteX0age50 created
+ WhiteX1age50 created
+ BlackX0age50 created
+ BlackX1age50 created
+ HispanicX0age50 created
+ HispanicX1age50 created
+ OtherX0age50 created
+ OtherX1age50 created
+Done
+Centering systolic blood pressure.................. Done
+Data cleaning completed
+
+. 
+end of do-file
+Detecting Variable Types
+Variable check cleared
+Detected binary variables: 
+ gender diabete hypertension smoke relation
+Detected categorical variables: 
+ race education
+Detected continuous variables: 
+ don_age bmi don_bp_preop_syst egfr
+Variable check cleared
+Please indicate variables to modify, separated by space (e.g.: aaa bbb ccc)
+Press enter to skip modification . 
+Generating Table1
+Table 1: Demographics
+N=116635
+Calculated Donor Age in Years at Organ Recovery or Referral Date, median[IQR] 39.0[31.0, 48.0] 
+Body Mass Index, median[IQR]                               26.0[24.0, 30.0] 
+Preoperative Systolic, median[IQR]                         120.0[111.0, 130.0] 
+Estimated Glomerular Filtration Rate, median[IQR]          97.0[83.0, 110.0] 
+Gender, n(%)
+   Male                                                    48810(41.8) 
+   Female                                                  67825(58.2) 
+Diabetes History, n(%)
+   No                                                      116607(100.0) 
+   Yes                                                     28(0.0) 
+Hypertension History, n(%)
+   No                                                      115656(99.2) 
+   Yes                                                     979(0.8) 
+Smoking History, n(%)
+   NoHistory                                               33502(28.7) 
+   Smoker                                                  10692(9.2) 
+Donor Relationship, n(%)
+   First-Degree Relationship                               72970(62.6) 
+   Non-First-Degree Relationship                           42696(36.6) 
+Race/Ethnicity, n(%)
+   White                                                   82696(70.9) 
+   Black                                                   14699(12.6) 
+   Hispanic                                                14304(12.3) 
+   Other                                                   4822(4.1) 
+Highest Level of Education, n(%)
+   <HighSchool                                             21016(18.0) 
+   AttendedCollege                                         16556(14.2) 
+   CollegeGraduate                                         14794(12.7) 
+   PostCollege                                             5980(5.1) 
+
+Missingness Information: 
+Gender                                                     0.00% missing
+Diabetes History                                           0.00% missing
+Hypertension History                                       0.00% missing
+Smoking History                                            62.11% missing
+Donor Relationship                                         0.83% missing
+Race/Ethnicity                                             0.10% missing
+Highest Level of Education                                 49.98% missing
+Calculated Donor Age in Years at Organ Recovery or Referral Date 0.01% missing
+Body Mass Index                                            36.64% missing
+Preoperative Systolic                                      43.41% missing
+Estimated Glomerular Filtration Rate                       35.66% missing
+
+Table 1 saved as Table1 to the following directory:
+G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\table1
+Detecting Variable Types
+Variable check cleared
+Detected binary variables: 
+ gender diabete hypertension smoke relation
+Detected categorical variables: 
+ race education
+Detected continuous variables: 
+ don_age bmi don_bp_preop_syst egfr
+Variable check cleared
+Please indicate variables to modify, separated by space (e.g.: aaa bbb ccc)
+Press enter to skip modification . 
+Generating Table1
+Table 1: Demographics
+N=23753
+Calculated Donor Age in Years at Organ Recovery or Referral Date, median[IQR] 54.0[52.0, 58.0] 
+Body Mass Index, median[IQR]                               26.0[24.0, 29.0] 
+Preoperative Systolic, median[IQR]                         124.0[115.0, 133.0] 
+Estimated Glomerular Filtration Rate, median[IQR]          85.0[74.0, 98.0] 
+Gender, n(%)
+   Male                                                    8855(37.3) 
+   Female                                                  14898(62.7) 
+Diabetes History, n(%)
+   No                                                      23740(99.9) 
+   Yes                                                     13(0.1) 
+Hypertension History, n(%)
+   No                                                      23126(97.4) 
+   Yes                                                     627(2.6) 
+Smoking History, n(%)
+   NoHistory                                               8300(34.9) 
+   Smoker                                                  2702(11.4) 
+Donor Relationship, n(%)
+   First-Degree Relationship                               12445(52.4) 
+   Non-First-Degree Relationship                           11161(47.0) 
+Race/Ethnicity, n(%)
+   White                                                   19660(82.8) 
+   Black                                                   1514(6.4) 
+   Hispanic                                                1661(7.0) 
+   Other                                                   896(3.8) 
+Highest Level of Education, n(%)
+   <HighSchool                                             4172(17.6) 
+   AttendedCollege                                         3305(13.9) 
+   CollegeGraduate                                         3603(15.2) 
+   PostCollege                                             2089(8.8) 
+
+Missingness Information: 
+Gender                                                     0.00% missing
+Diabetes History                                           0.00% missing
+Hypertension History                                       0.00% missing
+Smoking History                                            53.68% missing
+Donor Relationship                                         0.62% missing
+Race/Ethnicity                                             0.09% missing
+Highest Level of Education                                 44.56% missing
+Calculated Donor Age in Years at Organ Recovery or Referral Date 0.03% missing
+Body Mass Index                                            30.09% missing
+Preoperative Systolic                                      35.90% missing
+Estimated Glomerular Filtration Rate                       27.82% missing
+
+Table 1 saved as Table1_age50 to the following directory:
+G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\table1
+
+Survival-time data settings
+
+         Failure event: died==1
+Observed time interval: (0, dfup]
+     Exit on or before: failure
+     Time for analysis: time/365.25
+
+--------------------------------------------------------------------------
+    116,635  total observations
+          0  exclusions
+--------------------------------------------------------------------------
+    116,635  observations remaining, representing
+      1,145  failures in single-record/single-failure data
+  1,116,443  total analysis time at risk and under observation
+                                                At risk from t =         0
+                                     Earliest observed entry t =         0
+                                          Last observed exit t =  24.24914
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_Mortality_Overall.png saved as PNG format
+
+        Failure _d: died==1
+  Analysis time _t: dfup/365.25
+
+Iteration 0:  Log likelihood = -783.64399
+Iteration 1:  Log likelihood = -764.35569
+Iteration 2:  Log likelihood = -763.97624
+Iteration 3:  Log likelihood = -763.97172
+Iteration 4:  Log likelihood = -763.97007
+Iteration 5:  Log likelihood = -763.96946
+Iteration 6:  Log likelihood = -763.96924
+Iteration 7:  Log likelihood = -763.96916
+Iteration 8:  Log likelihood = -763.96913
+Iteration 9:  Log likelihood = -763.96911
+Iteration 10: Log likelihood = -763.96911
+Iteration 11: Log likelihood = -763.96911
+Iteration 12: Log likelihood = -763.96911
+Iteration 13: Log likelihood = -763.96911
+Iteration 14: Log likelihood = -763.96911
+Iteration 15: Log likelihood = -763.96911
+Iteration 16: Log likelihood = -763.96911
+Iteration 17: Log likelihood = -763.96911
+Iteration 18: Log likelihood = -763.96911
+Iteration 19: Log likelihood = -763.96911
+Iteration 20: Log likelihood = -763.96911
+Iteration 21: Log likelihood = -763.96911
+Iteration 22: Log likelihood = -763.96911
+Iteration 23: Log likelihood = -763.96911
+Iteration 24: Log likelihood = -763.96911
+Iteration 25: Log likelihood = -763.96911
+Iteration 26: Log likelihood = -763.96911
+Iteration 27: Log likelihood = -763.96911
+Iteration 28: Log likelihood = -763.96911
+Iteration 29: Log likelihood = -763.96911
+Iteration 30: Log likelihood = -763.96911
+Iteration 31: Log likelihood = -763.96911
+Iteration 32: Log likelihood = -763.96911
+Iteration 33: Log likelihood = -763.96911
+Iteration 34: Log likelihood = -763.96911
+Iteration 35: Log likelihood = -763.96911
+Iteration 36: Log likelihood = -763.96911
+Iteration 37: Log likelihood = -763.96911
+Iteration 38: Log likelihood = -763.96911
+Iteration 39: Log likelihood = -763.96911
+Iteration 40: Log likelihood = -763.96911
+Iteration 41: Log likelihood = -763.96911
+Refining estimates:
+Iteration 0:  Log likelihood = -763.96911
+
+Cox regression with Breslow method for ties
+
+No. of subjects =      32,438                           Number of obs = 32,438
+No. of failures =          80
+Time at risk    = 103,506.594
+                                                        LR chi2(14)   =  39.35
+Log likelihood = -763.96911                             Prob > chi2   = 0.0003
+
+------------------------------------------------------------------------------------------------
+                            _t | Haz. ratio   Std. err.      z    P>|z|     [95% conf. interval]
+-------------------------------+----------------------------------------------------------------
+                  age_centered |    1.00544   .0117803     0.46   0.643     .9826138    1.028796
+                  bmi_centered |   1.058164   .0233377     2.56   0.010     1.013397    1.104908
+                  sbp_centered |   1.020758    .008393     2.50   0.012      1.00444    1.037341
+                 egfr_centered |   1.000635   .0072686     0.09   0.930       .98649    1.014984
+                               |
+                        gender |
+                         Male  |   1.174848   .2695318     0.70   0.482     .7493765    1.841887
+                               |
+                       diabete |
+                          Yes  |   1.84e-18          .        .       .            .           .
+                               |
+                  hypertension |
+                          Yes  |   .8023946   .5831374    -0.30   0.762     .1930992    3.334231
+                               |
+                         smoke |
+                       Smoker  |   2.306428   .5325928     3.62   0.000     1.466841    3.626574
+                               |
+                      relation |
+Non-First-Degree Relationship  |   .9439475   .2150054    -0.25   0.800     .6040425    1.475123
+                               |
+                          race |
+                        Black  |    1.03635   .3697608     0.10   0.920     .5149978    2.085489
+                     Hispanic  |   .8507754   .3171201    -0.43   0.665     .4097661    1.766419
+                        Other  |   1.297407    .676224     0.50   0.617      .467111    3.603567
+                               |
+                     education |
+                  <HighSchool  |   1.953232   .6369395     2.05   0.040     1.030816    3.701063
+              AttendedCollege  |   1.363501   .4838509     0.87   0.382     .6801406    2.733457
+                  PostCollege  |   1.127825   .5587563     0.24   0.808      .427103     2.97818
+------------------------------------------------------------------------------------------------
+file Sinfo_Mort_Overall.csv saved
+
+Survival-time data settings
+
+         Failure event: esrd==1
+Observed time interval: (0, efup]
+     Exit on or before: failure
+     Time for analysis: time/365.25
+
+--------------------------------------------------------------------------
+    116,635  total observations
+          5  observations end on or before enter()
+--------------------------------------------------------------------------
+    116,630  observations remaining, representing
+        296  failures in single-record/single-failure data
+  1,114,724  total analysis time at risk and under observation
+                                                At risk from t =         0
+                                     Earliest observed entry t =         0
+                                          Last observed exit t =  24.24914
+file G:\OneDrive - Johns Hopkins\RDA-Muzaale\LTRFLKD\NYU\Visit 1\output\figures\KM_ESRD_Overall.png saved as PNG format
+
+        Failure _d: esrd==1
+  Analysis time _t: efup/365.25
+
+Iteration 0:  Log likelihood = -96.277809
+Iteration 1:  Log likelihood = -89.946944
+Iteration 2:  Log likelihood = -85.345081
+Iteration 3:  Log likelihood = -85.128816
+Iteration 4:  Log likelihood = -85.085628
+Iteration 5:  Log likelihood = -85.069945
+Iteration 6:  Log likelihood = -85.064185
+Iteration 7:  Log likelihood = -85.062068
+Iteration 8:  Log likelihood = -85.061289
+Iteration 9:  Log likelihood = -85.061002
+Iteration 10: Log likelihood = -85.060897
+Iteration 11: Log likelihood = -85.060858
+Iteration 12: Log likelihood = -85.060844
+Iteration 13: Log likelihood = -85.060838
+Iteration 14: Log likelihood = -85.060836
+Iteration 15: Log likelihood = -85.060836
+Iteration 16: Log likelihood = -85.060835
+Iteration 17: Log likelihood = -85.060835
+Iteration 18: Log likelihood = -85.060835
+Iteration 19: Log likelihood = -85.060835
+Iteration 20: Log likelihood = -85.060835
+Iteration 21: Log likelihood = -85.060835
+Iteration 22: Log likelihood = -85.060835
+Iteration 23: Log likelihood = -85.060835
+Iteration 24: Log likelihood = -85.060835
+Iteration 25: Log likelihood = -85.060835
+Iteration 26: Log likelihood = -85.060835
+Iteration 27: Log likelihood = -85.060835
+Iteration 28: Log likelihood = -85.060835
+Iteration 29: Log likelihood = -85.060835
+Iteration 30: Log likelihood = -85.060835
+Iteration 31: Log likelihood = -85.060835
+Iteration 32: Log likelihood = -85.060835
+Iteration 33: Log likelihood = -85.060835
+Iteration 34: Log likelihood = -85.060835
+Refining estimates:
+Iteration 0:  Log likelihood = -85.060835
+Iteration 1:  Log likelihood = -85.060835
+
+Cox regression with no ties
+
+No. of subjects =      32,437                           Number of obs = 32,437
+No. of failures =          10
+Time at risk    = 103,493.829
+                                                        LR chi2(15)   =  22.43
+Log likelihood = -85.060835                             Prob > chi2   = 0.0969
+
+------------------------------------------------------------------------------------------------
+                            _t | Haz. ratio   Std. err.      z    P>|z|     [95% conf. interval]
+-------------------------------+----------------------------------------------------------------
+                  age_centered |   1.002906   .0339932     0.09   0.932     .9384457    1.071795
+                  bmi_centered |    1.09112   .0485387     1.96   0.050     1.000015    1.190525
+                  sbp_centered |   .9901865   .0238067    -0.41   0.682     .9446085    1.037964
+                 egfr_centered |   .9512567   .0176581    -2.69   0.007     .9172695    .9865032
+                               |
+                        gender |
+                         Male  |    .679487   .4763156    -0.55   0.581     .1719867    2.684525
+                               |
+                       diabete |
+                          Yes  |   1.10e-15   4.22e-07    -0.00   1.000            0           .
+                               |
+                  hypertension |
+                          Yes  |   3.789457   4.173212     1.21   0.226     .4376985    32.80794
+                               |
+                         smoke |
+                       Smoker  |   .6640568   .5361336    -0.51   0.612     .1364515    3.231709
+                               |
+                      relation |
+Non-First-Degree Relationship  |   .6774644   .4488978    -0.59   0.557     .1848706    2.482591
+                               |
+                          race |
+                        Black  |   3.360696   2.483908     1.64   0.101     .7894083    14.30727
+                     Hispanic  |   3.62e-16   1.99e-08    -0.00   1.000            0           .
+                        Other  |   3.91e-16   3.67e-08    -0.00   1.000            0           .
+                               |
+                     education |
+                  <HighSchool  |   .9902103   .8252277    -0.01   0.991     .1933516    5.071158
+              AttendedCollege  |   1.468868    1.13229     0.50   0.618     .3242103    6.654858
+                  PostCollege  |   3.22e-16   1.61e-08    -0.00   1.000            0           .
+------------------------------------------------------------------------------------------------
+
+symmetric cox_var[22,22]
+                                                                                 0.           1b.           0b.            1.           0b.            1.
+              age_centered  bmi_centered  sbp_centered  egfr_cente~d        gender        gender       diabete       diabete  hypertension  hypertension
+age_centered     .00114885
+bmi_centered     .00001687     .00197893
+sbp_centered    -.00012893    -.00022291     .00057805
+egfr_cente~d     .00019804      .0001094     .00002403     .00034458
+    0.gender     .00213889     .00279494    -.00201165    -.00027345     .49139098
+   1b.gender             0             0             0             0             0             0
+  0b.diabete             0             0             0             0             0             0             0
+   1.diabete    -.00030006    -.00249349    -.00205424     .00040958     -.0749349             0             0     1.482e+17
+0b.hyperte~n             0             0             0             0             0             0             0             0             0
+1.hyperten~n     -.0084378     .00175055    -.00327149    -.00133525    -.01967123             0             0     -.4512267             0     1.2127936
+    1b.smoke             0             0             0             0             0             0             0             0             0             0
+     2.smoke    -.00044621    -.00232672     .00082187     .00004526     -.0152476             0             0     .16888227             0    -.02811976
+ 1b.relation             0             0             0             0             0             0             0             0             0             0
+  2.relation    -.00230846     .00045733     .00002848     -.0001561     .01769979             0             0     .05722251             0     .01538675
+     1b.race             0             0             0             0             0             0             0             0             0             0
+      2.race     .00440709    -.00540918    -.00043951    -.00183476     .00448412             0             0     .09365833             0    -.00286453
+      3.race     .00383672    -.00102819     .00046885    -.00188699    -.00049099             0             0    -.07158276             0      .0334234
+      4.race     .00313149     .00334257     .00040521    -.00046073     .01325638             0             0    -.08902746             0     .04299721
+ 1.education      .0004233    -.00077082    -.00049162    -.00045039     .00257842             0             0     -.2080056             0     .00250382
+ 2.education     .00061565     .00126323    -.00012184    -.00074889     .01680016             0             0    -.11035331             0     .02916896
+3b.education             0             0             0             0             0             0             0             0             0             0
+ 4.education    -.00292078     .00298972     .00072651     -.0004813    -.02024505             0             0    -.15794563             0     .00930175
+
+                        1b.            2.           1b.            2.           1b.            2.            3.            4.            1.            2.
+                     smoke         smoke      relation      relation          race          race          race          race     education     education
+    1b.smoke             0
+     2.smoke             0     .65183194
+ 1b.relation             0             0             0
+  2.relation             0     .00997528             0      .4390582
+     1b.race             0             0             0             0             0
+      2.race             0     .03563812             0     .06921383             0     .54627655
+      3.race             0     .07618656             0     .05644744             0     .20462381     3.008e+15
+      4.race             0     .00826149             0     .05729148             0     .17155542     .18613066     8.823e+15
+ 1.education             0    -.11887693             0     .01867782             0    -.03301963    -.13658424    -.03104989     .69453268
+ 2.education             0    -.05243551             0    -.01312472             0    -.02366016    -.04992628    -.03222007      .3448866     .59422289
+3b.education             0             0             0             0             0             0             0             0             0             0
+ 4.education             0     .00552259             0     -.0098274             0     .01529997     .01099091    -.03062918     .32538569     .33170644
+
+                        3b.            4.
+                 education     education
+3b.education             0
+ 4.education             0     2.504e+15
+Please confirm to proceed ) invalid name
+r(198);
+
+end of do-file
+
+r(198);
+
