@@ -7,6 +7,7 @@ qui {
         set more off
         set varabbrev on
         cls
+		macro drop _all
 
         // establish slash
         if (c(os) == "Windows") {
@@ -464,4 +465,8 @@ qui {
 
     }
 
+    if 8 {
+		cd "${root}"
+        noi do donor_st.do
+    }
 }

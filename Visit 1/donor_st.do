@@ -1,5 +1,7 @@
 qui {
-	cd "${root}"
+	cd "${output}"
+	capture mkdir "d90"
+	cd "${output}${slash}d90"
 	use "${data}${slash}donor_live", clear
 	
 	capture drop race
@@ -22,12 +24,12 @@ qui {
 	gen p2014 = 0 if !missing(don_recov_dt)
 	replace p2014 = 1 if !missing(don_recov_dt) & (don_recov_dt > d(31dec2013))
 	
-	keep don_age don_gender race2 don_recov_dt pers_ssa_death p2014
+	keep don_age don_gender race2 don_recov_dt pers_ssa_death_dt p2014
 	rename race2 don_race
 	
-	gen died=!missing(pers_ssa_death)
-	replace died=0 if pers_ssa_death>d(30dec2011)
-	gen end_dt=min(pers_ssa_death,d(30dec2011))
+	gen died=!missing(pers_ssa_death_dt)
+	replace died=0 if pers_ssa_death_dt>d(30dec2011)
+	gen end_dt=min(pers_ssa_death_dt,d(30dec2011))
 	tab died
 	g days=end_dt-don_recov_dt
 	replace days = .5 if days==0
